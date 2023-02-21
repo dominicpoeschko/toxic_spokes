@@ -47,13 +47,13 @@ namespace detail {
 
             std::memcpy(msg.data, data.data.data(), data.size);
 
-            Socket_Impl::send(std::as_bytes(std::span{msg, 1}));
+            Socket_Impl::send(std::as_bytes(std::span{std::addressof(msg), 1}));
         }
 
         Message recv() {
             frame_t msg;
 
-            Socket_Impl::recv(std::as_writable_bytes(std::span{msg, 1}));
+            Socket_Impl::recv(std::as_writable_bytes(std::span{std::addressof(msg), 1}));
 
             Message data;
             data.size = msg.len;
