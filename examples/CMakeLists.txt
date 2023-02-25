@@ -10,22 +10,39 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(toxic_spokes)
 
+find_package(fmt)
+
 add_executable(can_fd_example CAN/can_fd.cpp)
 target_compile_options(can_fd_example PUBLIC -std=c++20)
-target_link_libraries(can_fd_example toxic_spokes::toxic_spokes)
+target_link_libraries(can_fd_example 
+                        toxic_spokes::toxic_spokes
+                        fmt::fmt-header-only
+                        )
 
 add_executable(can_example CAN/can.cpp)
 target_compile_options(can_example PUBLIC -std=c++20)
-target_link_libraries(can_example toxic_spokes::toxic_spokes)
+target_link_libraries(can_example 
+                        toxic_spokes::toxic_spokes
+                        fmt::fmt-header-only
+                        )
 
-add_executable(tcp_example IP/tcp.cpp)
-target_compile_options(tcp_example PUBLIC -std=c++20)
-target_link_libraries(tcp_example toxic_spokes::toxic_spokes)
+add_executable(tcp_basic_example IP/tcp_basic.cpp)
+target_compile_options(tcp_basic_example PUBLIC -std=c++20)
+target_link_libraries(tcp_basic_example 
+                        toxic_spokes::toxic_spokes
+                        fmt::fmt-header-only
+                        )
 
-add_executable(udp_example IP/udp.cpp)
-target_compile_options(udp_example PUBLIC -std=c++20)
-target_link_libraries(udp_example toxic_spokes::toxic_spokes)
+add_executable(udp_basic_example IP/udp_basic.cpp)
+target_compile_options(udp_basic_example PUBLIC -std=c++20)
+target_link_libraries(udp_basic_example 
+                        toxic_spokes::toxic_spokes
+                        fmt::fmt-header-only
+                        )
 
 add_executable(uart_example Serial/uart.cpp)
 target_compile_options(uart_example PUBLIC -std=c++20)
-target_link_libraries(uart_example toxic_spokes::toxic_spokes)
+target_link_libraries(uart_example 
+                        toxic_spokes::toxic_spokes
+                        fmt::fmt-header-only
+                        )
