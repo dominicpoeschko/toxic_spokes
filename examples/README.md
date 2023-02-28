@@ -6,6 +6,7 @@ This readme gives an overview over the examples of several key features of `toxi
 
 To compile all the examples in this folder simply use:
 ```bash
+cd examples #if your are not already inside the folder
 mkdir build
 cd build
 cmake ..
@@ -38,5 +39,10 @@ An commented out example of the CAN FD functionality can be found in [CAN/can_fd
 > Note: CAN FD is currently supported but not tested. A use of the CAN FD class like in the example will not compile!
 
 ## Serial
+`ts` also supports serial communication through the serial devices of Linux.
 
 ### UART
+An example of the communication through an `UART` interface is given in [Serial/uart.cpp](Serial/uart.cpp). 
+The example sends a string to the output of a hardware UART interface. This output is connected to the input of the same interface.
+All data sent is received from the example and written into a input buffer.
+The programm succeeds if the sent and received strings are equal.
