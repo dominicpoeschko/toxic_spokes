@@ -1,4 +1,3 @@
-
 # Examples of Toxic Spokes
 This readme gives an overview over the examples of several key features of `toxic_spokes` (in the following as `ts`). A basic usecase is the use of the IP functionality. It provides socket communication with remote hosts over the TCP as well as the UDP protocoll.
 `ts` provides CAN and serial communication features as well. These features can be used with an USB interface, providing the connection to external hardware.
