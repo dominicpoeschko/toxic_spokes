@@ -5,6 +5,9 @@
 
 #include <asm-generic/ioctls.h>
 #include <asm-generic/termbits.h>
+#include <cstdint>
+#include <string>
+
 namespace ts { namespace detail {
     extern void setCustomBaudrate(std::string const& interface, int fd, std::uint32_t baudRate);
 
